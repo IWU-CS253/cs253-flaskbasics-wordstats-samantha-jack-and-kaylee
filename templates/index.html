@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
     <form action="/stats" method = "post">
-        <input autocomplete="off" autofocus name="sentence" placeholder="Start Typing..." type="text">
+        <input autocomplete="off" autofocus name="sentence" placeholder="Start Typing..." type="text" required>
         <button type="submit">Submit</button>
     </form>
 
