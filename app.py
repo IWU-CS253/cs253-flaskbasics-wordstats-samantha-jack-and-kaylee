@@ -15,10 +15,10 @@ def stats():
     sentence = request.form.get("sentence")
     words = sentence.split(' ')
     word_count = len(words)
-    char_count = len(sentence)
     total = 0
     for word in words:
         total += len(word)
+    char_count = total
     average = (total / len(words))
     return render_template("stats.html", word_count=word_count, char_count=char_count, average=average)
 
