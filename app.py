@@ -1,16 +1,18 @@
-from flask import Flask, render_template, results
+
+from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+def index():
+    return render_template("index.html")
 
 
 @app.route("/stats", methods=["POST"])
 def stats():
-    sentence = results.form.get("sentence")
+    sentence = request.form.get("sentence")
     words = sentence.split(' ')
     word_count = len(words)
     char_count = len(sentence)
@@ -23,3 +25,4 @@ def stats():
 
 if __name__ == '__main__':
     app.run()
+
